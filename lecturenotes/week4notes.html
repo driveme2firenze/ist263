@@ -2,6 +2,9 @@
 <html lang="en">     
     <head>
         <meta charset="utf-8">
+        <style>
+            th, td {border: 1px solid black;}
+        </style>
         <title>Week 4 Notes</title>
     </head>
     <body>
@@ -9,13 +12,64 @@
             <h2>Tables</h2>
                 <table>
                     <caption>World Populations</caption>
-                    <tr>     <!-- tr stands for table row-->
-                        <th>Country</th>
+                    <tr>     <!--tr = table row-->
+                        <th>Country</th>    <!--th = table heading-->
                         <th>Population</th>
                         <th>% of World Population</th>
                     </tr>
+                    <tr>
+                        <td>China</td>  <!--td = table data-->
+                        <td>1,403,830,640</td>
+                        <td>18.0%</td>
+                    </tr>
+                    <tr>
+                        <td>India</td>
+                        <td>1,365,529,124</td>
+                        <td>17.5%</td>
+                    </tr>
+                    <tr>
+                        <td>United States</td>
+                        <td>330,070,331</td>
+                        <td>4.23%</td>
+                    </tr>
+                    <tr>
+                        <td>Indonesia</td>
+                        <td>269,603,400</td>
+                        <td>3.45%</td>
+                    </tr>
+                    <tr>
+                        <td>Pakistan</td>
+                        <td>220,892,331</td>
+                        <td>2.83%</td>
+                    </tr>
                 </table>
             <h2>Forms</h2>
+                <form action=""method="post">   <!--post sends form data on the back end, get sends form data across the URL-->
+                    <label for="fullname">Full Name:</label><br>
+                    <input type="text" id="fullname" name="fullname"><br> <!--id value links with for value in a label-->
+                    <label for="instructions">Special Instructions</label><br>
+                    <textarea id="instructions" name="instructions" rows="3" cols="60"></textarea><br>
+                    
+                    <p>Choose a delivery method:</p>    
+                    <input type="radio" id="pickup" name="pickupdel" value="pickup"> <!--name value links different choices-->
+                    <label for="pickup">Pick Up</label>
+                    <input type="radio" id="delivery" name="pickupdel" value="delivery">
+                    <label for="delivery">Delivery</label>
+
+                    <p>Do you want extra sauce?</p>
+                    <input type="checkbox" id="extra" name="extra" value="yes">
+                    <label for="extra">Yes</label><br>
+
+                    <label for="hood">Neighborhood</label><br>
+                    <select name="hood" id="hood">
+                        <option></option>
+                        <option value="westcott">Westcott</option>
+                        <option value="downtown">Downtown</option>
+                        <option value="eastwood">Eastwood</option>
+                    </select>
+                    <input type="submit" value="Send Form">
+                    <!--most form elements are inline; no forwarding to the next line, no margin around-->
+                </form>
         <table>
 
         </table>
