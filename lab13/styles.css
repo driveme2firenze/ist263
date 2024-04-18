@@ -18,8 +18,9 @@ nav {
     margin-bottom: 30px;
 }
 nav a {color: #d3b52e !important;}
-nav a:visited {color: #ffffff;}
+nav a:visited {color: #ffffff !important;}
 nav a:hover {background-color: #cff09e; width: fit-content;}
+nav p {color: #d3b52e;}
 
 
 
