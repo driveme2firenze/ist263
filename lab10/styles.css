@@ -22,14 +22,14 @@ nav a:hover {background-color: #0b486b;}
 
 
 
-@media only screen and (min-width: 600px) and (max-width: 992px) {
+@media only screen and (max-width: 992px) {
     nav a {
-        max-width: 100%;
         display: block;
+        max-width: 100%;
     } 
+    nav span {
+        display: none;
+    }
 
 }
 
-@media only screen and (min-width: 600px) {}
-@media only screen and (min-width: 600px) {}
-@media only screen and (min-width: 600px) {}
