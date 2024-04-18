@@ -19,7 +19,7 @@ nav {
 }
 nav a {color: #e0ffff;}
 nav a:visited {color: #83a3a3;}
-nav a:hover {background-color: #cff09e;}
+nav a:hover {background-color: #cff09e; width: fit-content;}
 
 
 
