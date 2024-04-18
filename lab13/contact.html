@@ -53,14 +53,16 @@
                         <label for="yname">Your Name:</label>
                         <input type="text" id="yname" name="contactname"><br>
 
-                        <p>Reason for contact:</p>    
-                            <input type="radio" id="personal" name="contacttype" value="personal"> <!--name value links different choices-->
-                            <label for="personal">Personal</label>
-                            <input type="radio" id="professional" name="contacttype" value="professional">
-                            <label for="professional">Professional</label>
-                            <input type="radio" id="other" name="contacttype" value="other">
-                            <label for="other">Other</label><br><br>
-                            <label for="message">Message:</label><br>
+                        <p>Reason for contact:</p>
+                            <fieldset>    
+                                <input type="radio" id="personal" name="contacttype" value="personal"> <!--name value links different choices-->
+                                <label for="personal">Personal</label>
+                                <input type="radio" id="professional" name="contacttype" value="professional">
+                                <label for="professional">Professional</label>
+                                <input type="radio" id="other" name="contacttype" value="other">
+                                <label for="other">Other</label><br><br>
+                                <label for="message">Message:</label><br>
+                            </fieldset>
                             <textarea id="message" name="message" rows="8" cols="40"></textarea><br>
                             <input type="submit" value="Send">
                     </form>
