@@ -14,11 +14,10 @@ a:visited {color: #42037c}
 
 nav {
     background-color: #0b486b;
-    color: #d3b52e;
     padding: 10px;
     margin-bottom: 30px;
 }
-nav a {color: #d3b52e;}
+nav a {color: #d3b52e !important;}
 nav a:visited {color: #d3b52e;}
 nav a:hover {background-color: #cff09e; width: fit-content;}
 
