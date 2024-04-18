@@ -26,6 +26,7 @@ nav a:hover {background-color: #0b486b;}
     nav a {
         display: block;
         max-width: 100%;
+        margin: 5px;
     } 
     nav span {
         display: none;
