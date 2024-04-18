@@ -9,20 +9,20 @@ h1, h2, h3 {color: #0b486b;}
 
 p, ul {color: #38634c;}
 
-a:link {color: #3b8686;}
-a:visited {color: #42037c}
+
 
 nav {
     background-color: #0b486b;
     padding: 10px;
     margin-bottom: 30px;
 }
-nav a {color: #d3b52e !important;}
+nav a:link {color: #d3b52e;}
 nav a:visited {color: #ffffff;}
 nav a:hover {background-color: #e0ffff; width: fit-content;}
 nav span {color: #d3b52e;}
 
-
+main a:link {color: #3b8686;}
+main a:visited {color: #42037c}
 
 @media only screen and (max-width: 992px) {
     nav a {display: block; max-width: 100%; margin: 10px;} 
