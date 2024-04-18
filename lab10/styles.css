@@ -13,12 +13,12 @@ a:link {color: #3b8686;}
 a:visited {color: #42037c}
 
 nav {
-    background-color: #8ddbe1;
+    background-color: #0b486b;
     padding: 10px;
     margin-bottom: 30px;
 }
-nav a {color: #3B8686;}
-nav a:hover {background-color: #0b486b;}
+nav a {color: #e0ffff;}
+nav a:hover {background-color: #cff09e;}
 
 
 
