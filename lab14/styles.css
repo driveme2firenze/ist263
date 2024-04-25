@@ -1,0 +1,53 @@
+body {
+    font-family: 'Times New Roman', serif;
+    background-color: #cff09e;
+    color: #38634c
+    ;
+}
+
+h1, h2, h3 {
+    color: #0b486b;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+p, ul {color: #38634c;}
+
+
+
+nav {
+    background-color: #0b486b;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+nav a:link {color: #d3b52e;}
+nav a:visited {color: #ffffff;}
+nav a:hover {background-color: #e0ffff; width: fit-content;}
+nav span {color: #d3b52e;}
+
+main a:link {color: #3b8686;}
+main a:visited {color: #42037c}
+
+@media only screen and (max-width: 992px) {
+    nav a {display: block; max-width: 100%; margin: 10px;} 
+    nav span {display: none;}
+}
+
+.skip {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+.skip:focus {
+    position: static;
+    width: auto;
+    height: auto;
+  }
+
+
+  
