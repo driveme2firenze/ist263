@@ -4,8 +4,143 @@
         <title>Band History</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
         <link rel="stylesheet" href="projstyles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Chicle&family=Josefin+Sans:ital@0;1&family=Ultra&display=swap" rel="stylesheet">
         <style>
+            * {
+            box-sizing: border-box;
+            }
+
+           /* The actual timeline (the vertical ruler) */
+            .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            }
+
+            /* The actual timeline (the vertical ruler) */
+            .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #2a3f4e;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            }
+
+            /* Container around content */
+            .container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            }
+
+            /* The circles on the timeline */
+            .container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: white;
+            border: 4px solid #2a3f4e;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            }
+
+            /* Place the container to the left */
+            .left {
+            left: 0;
+            }
+
+            /* Place the container to the right */
+            .right {
+            left: 50%;
+            }
+
+            /* Add arrows to the left container (pointing right) */
+            .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+            }
+
+            /* Add arrows to the right container (pointing left) */
+            .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+            }
+
+            /* Fix the circle for containers on the right side */
+            .right::after {
+            left: -16px;
+            }
+
+            /* The actual content */
+            .content {
+            padding: 20px 20px;
+            background-color: #2a3f4e;
+            position: relative;
+            border-radius: 1em;
+            }
+
+            .content h2 {
+                text-align: center;
+                font-size: 48px;
+                margin-top: 5px;
+            }
+
+          
+
+            .timevid {
+                text-align: center;
+            }
+
+            .histitle {
+                background-color: #2a3f4e;
+                text-align: center;
+                width: 80%;
+                border-radius: 1em;
+                margin: 0 auto;
+                margin-top: 20px;
+            }
+
+            .histintro {
+                background-color: #2a3f4e;
+                width: 60%;
+                border-radius: 1em;
+                margin: 0 auto;
+                margin-top: 20px;
+                padding: 20px 20px;
+            }
+
+            .histintro h2 {
+                text-align: center;
+                font-size: 56px;
+                margin-top: 30px;
+            }
 
         </style>
         <script>
@@ -13,17 +148,112 @@
         </script>
     </head>
     <body>
-        <header>
-            <a href="#main" class="skip">Skip to main content</a>
-            <nav>
-
-            </nav>
-        </header>
+        <a href="#main" class="skip">Skip to main content</a>
+        <nav>
+            <div class="navflex">
+                <div class="navbutts">
+                    <div>
+                        <a href="index.html" class="navbutton">Home</a>
+                    </div>
+                    <div>
+                        <a href="history.html" class="navbutton">Band History</a>
+                    </div>
+                    <div>
+                        <a href="guide.html" class="navbutton">Jam Guide</a>
+                    </div>
+                </div>
+                <div class="webtitle" >
+                    <img src="images/title.png" alt="Title card">
+                </div>
+                <div class="ocelot">
+                    <a class="ocelotpic" href="https://www.youtube.com/watch?v=0cb3lruYkgM" target="_blank"><img src="images/ocelot.png" alt="Ocelot face"></a>
+                </div>
+            </div>
+        </nav>
         <main id="main">
             
+            <section class="histitle">
+                <h1><img id="histcard" src="images/history_title.png" alt="History title card"></h1>
+            </section>
+            <section class="histintro">
+                <h2>40 Years Of Unbridled Creativity</h2>
+                <p>Throughout their 40-year career, Phish has gone through many changes of their sound. Most fans divide these “eras” into three groups: 1.0, which goes from the start of the band until their first hiatus in 2001; 2.0, which goes from their return in 2002 until their official break-up in 2004; and 3.0, which goes from their reunion in 2009 until the present day. However, these broad eras don’t capture the full range of the change in their sound over the years. Thus, I have broken those eras up even more to explain how the band sounded throughout different stages in their career:</p>
+            </section>
+            <section>            
+                <div class="timeline">
+                    <div class="container left">
+                        <div class="content">
+                            <h2>1983-1988</h2>
+                            <p>These are the early years of Phish; the years they spent cutting their teeth playing small bars, frat houses, friend’s farms, and really anywhere else that would book them. You can hear them here finding their sound and enjoying to the fullest of being young, early-20s kids just playing music.</p>
+                            <div class="timevid">
+                                <iframe id="histvid" width="420" height="263" src="https://www.youtube.com/embed/Sh9Pws7mOjE?si=nP-6M8qlHiYoo1TS" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container right">
+                    <div class="content">
+                        <h2>1989-1992</h2>
+                        <p>Here is where the hard grind starts to pay off for Phish. The band is starting to get national attention. They’re not just playing the northeast club circuit anymore; they’re heading out to bigger and bigger clubs and theaters all across the country. Their sound has sharpened while still retaining a silly aloofness that defined their early years. Shows from this era will feature fast, intense playing, with shorter jams more centered around the songs they originate from. This also is the last era where jazz covers still happen with some regularity.</p>
+                        <div class="timevid">
+                            <iframe id="histvid1" width="420" height="263" src="https://www.youtube.com/embed/c3zpnp3g7dI?si=wKnGJfcaIpFSI6zK" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="container left">
+                    <div class="content">
+                        <h2>1993-1996</h2>
+                        <p>With the addition of Page’s baby grand piano in 1993, Phish has now become a powerhouse, moving from clubs and small theaters to arenas. The fan base starts pick up steam here as well, and by 1995, after the death of Jerry Garcia and consequentially the end of the Grateful Dead, Phish becomes the de facto leaders of the jam band world. In 1996, the band puts on its first solo festival, heralding a new age in the American music festival scene. Their playing has mautred, broadening and filling out to match the upgrade in venues. The jams get longer and now start to depart wildly from the song they started out as. Carefully planned set lists allow for many crazy segues between songs, often leading to the band playing 40-50 minutes straight without stopping. This is also the era of "Machine Gun Trey"; shows from this era feature a lot of fast, rock oriented playing, especially coming from Trey.</p>
+                        <div class="timevid">
+                            <iframe id="histvid2" width="420" height="263" src="https://www.youtube.com/embed/mwgLW-0OkJ4?si=Jzxj3tQLO0umQXev" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="container right">
+                    <div class="content">
+                        <h2>1997-1998</h2>
+                        <p>Competing hotly with the previous era for the title of Most Beloved by fans, this era is the result of Phish's massive success in becoming one of the largest live musical acts of all time. They put on a couple more festivals, go on a couple of short European tours, and host a couple more 4-day New Years Eve runs at Madison Square Garden, all on top of a still grueling touring schedule. The atmosphere surrounding Phish tour becomes decidedly more hedonistic, and the music reflects that. Lovingly refered to as the "Cow Funk" era, shows during this time feature a heavy amount of funk. The playing becomes looser as well, with less focus on fast, technical, and diverse playing, and more focus on groove, spontaneity, and texture. The planned setlists have ceased, and songs are now chosen on the fly based on what the energy feels like in the room.</p>
+                        <div class="timevid">
+                            <iframe id="histvid3" width="420" height="263" src="https://www.youtube.com/embed/r0kAyCprnR4?si=J0fCObNHP24oE759" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="container left">
+                    <div class="content">
+                        <h2>1999-2000</h2>
+                        <p>By 1999, Phish has taken the groove-based approach to a whole new level. While the band's stage setup for every year previous featured all 4 members lined up horizontally (in order from stage right: Page, Trey, Mike, Fish), they decided to switch things up in 1999. To reinforce the focus on the groove, Fish was moved center stage with Mike right in front of him and Page and Trey flanking the sides. The band rang in the New Millennium with their fans by putting on another festival, called Big Cypress, which drew a crowd of over 85,000. In addition to the normal festival shenanigans, starting at midnight on New Years the band played for 7.5 hours until sunrise. While the music doubles down on the groove aspect, the amount of funk levels out and gives way to more a more ambient approach. More synthesizers and crazy guitar effects allow for Trey and Page to create spacier, less focused soundscapes on top of the deep, hypnotizing pulses from Mike and Fish.</p>
+                        <div class="timevid">
+                            <iframe id="histvid4" width="420" height="263" src="https://www.youtube.com/embed/xri7OSXJzfc?si=VuhL1qeQqQiy0i5Q" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="container right">
+                    <div class="content">
+                        <h2>2003-2004</h2>
+                        <p>At the end of 2000, Phish decided to take a hiatus. With the band returning to the stage on December 31 of 2002, fans aren't sure what to expect. The stage setup has changed again, this time configured in a more standard rock band format, with the lead singer and guitarist center stage in front of the drummer, flanked by the keyboardist and bassist. The music also has started to take a more classic rock feel, bringing a bold intensity and emotion not found in any other era. While most fans will probably tell you that this is their least favorite era, there is a fire and passion in these jams that isn't found anywhere else. To the dismay of their rabid following, the band anounced they would be disbanding in the summer of 2004. To mark the conlcusion of their unique and storied carreer, they put on one final festival to thank their fans for their undying support over their years.</p>
+                        <div class="timevid">
+                            <iframe id="histvid5" width="420" height="263" src="https://www.youtube.com/embed/EVs0rhPvCvY?si=jNexXd342JlaS_Kj" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="container left">
+                    <div class="content">
+                        <h2>2009-present</h2>
+                        <p>Thankfully, the disbandment didn't last long. At the end of 2008 Phish announces they would be back for good. Returning to their original stage setup, the band welcomes thousands of roaring fans back on March 6, 2009. With their comeback came a commitment to a healthier tour life, reducing the amount of shows they played every year and cutting out the partying. While no fan is happy to hear about less shows, this constraint allows for the jams to evolve in a way that never happened in the past. Without the distractions off stage, the already humble band members disolve their egos further to expand the depth of their improvisational creativity. Continuing to reward audiences unique and magical experiences like a few more festivals of their signature festivals, playing a 13 show residency at Madison Sqaure Garden without repeating a song, and being the second band ever to play the Sphere in Las Vegas, they don't show any signs of slowing down.</p>
+                        <div class="timevid">
+                            <iframe id="histvid6" width="420" height="263" src="https://www.youtube.com/embed/4POwr8pmlWM?si=VokV5IqBfTPevalc" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </section>
         </main>
         <footer>
-
+            <p>&copy;2024  This site voluntarily complies with the Phish fan web site policy at: <a href="https://phish.com/faq/#web-guidelines" target="_blank">https://phish.com/faq/#web-guidelines</a></p>
+            <div class="footbutts">
+                <a href="index.html" class="navbutton">Home</a>
+                <a href="history.html" class="navbutton">Band History</a>
+                <a href="guide.html" class="navbutton">Jam Guide</a>
+            </div>
         </footer>
     </body>
 </html>

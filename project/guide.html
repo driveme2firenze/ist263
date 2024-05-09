@@ -4,26 +4,991 @@
         <title>Listening Guide</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
         <link rel="stylesheet" href="projstyles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Chicle&family=Josefin+Sans:ital@0;1&family=Ultra&display=swap" rel="stylesheet">
         <style>
+            .jamtitle {background-color: #2a3f4e; border-radius: 1em; width: 60%; margin: 0 auto; text-align: center; margin-top: 20px; padding: 15px;}
+            .jamlist {display: flex; flex-wrap: wrap; justify-content: space-between; margin-top: 20px;}
+            .jamplayer {display: flex; flex-wrap: wrap; background-color: #2a3f4e; border-radius: 1em; margin-top: 20px;
+            padding: 20px; justify-content: space-between;}
+            #howto {width: 60%; background-color: #2a3f4e; border-radius: 1em; padding: 15px;}
+            #howto h2 {text-align: center; font-size: 60px;}
+            #howto p {text-align: center; font-size: 20px;}
+            .songlist {background-color: #2a3f4e; border-radius: 1em; margin-right: 10%; width: 20%;}
+            .songlist h2 {text-align: center; font-size: 40px;}
+            #jamwindow {width: 40%; margin-left: 40px;}
+            .jamdesc {width: 50%;}
+            .jamdesc h2 {text-align: center; font-size: 60px; margin-top: 10px;}
+            .jamdesc p {font-size: 20px; text-align: center; margin: 12px;}
+            #camdenplayer, #tweezplayer, #kdfplayer, #simpleplayer, #ginplayer, #scentsplayer, #camdendesc1, #camdendesc2, #camdendesc3, #camdendesc4, #camdendesc5, #camdendesc6, #camdendesc7, #camdendesc8, #tweezdesc1, #tweezdesc2, #tweezdesc3, #tweezdesc4, #tweezdesc5, #tweezdesc6, #tweezdesc7, #tweezdesc8, #tweezdesc9, #tweezdesc10, #tweezdesc11, #kdfdesc1, #kdfdesc2, #kdfdesc3, #kdfdesc4, #kdfdesc5, #kdfdesc6, #kdfdesc7, #kdfdesc8, #kdfdesc9, #simpledesc1, #simpledesc2, #simpledesc3, #simpledesc4, #simpledesc5, #simpledesc6, #simpledesc7, #simpledesc8, #gindesc1, #gindesc2, #gindesc3, #gindesc4, #gindesc5, #gindesc6, #gindesc7, #gindesc8, #scentsdesc1, #scentsdesc2, #scentsdesc3, #scentsdesc4, #scentsdesc5, #scentsdesc6, #scentsdesc7, #scentsdesc8, #scentsdesc9, #scentsdesc10, #scentsdesc11 {display: none;}
+            #camdendesc7 p {font-family: 'Chicle'; font-size: 60px; margin-top: 10px;}
+            #tweezdesc8, #kdfdesc7 {text-align: center;}
+            
+            
+
+
+            .slist {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                margin: 10px;
+            }
+
+            .songbutt {
+                background-color: #be2a28;
+                border: none;
+                border-radius: 1em;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-family: "Chicle";
+                font-size: 20px;
+                margin: 15px;
+                cursor: pointer;
+            }
+
+            #camdendesc1, #tweezdesc1, #kdfdesc1, #simpledesc1, #gindesc1, #scentsdesc1 {
+                animation-name: fade-out;
+                animation-duration: 2s;
+                animation-timing-function: linear;
+                animation-delay: 6s;
+                animation-iteration-count: 1;
+                animation-direction: normal;
+                animation-fill-mode: forwards;
+                animation-play-state: paused;
+            }
+
+            #camdendesc2, #camdendesc3, #camdendesc5, #camdendesc6, #camdendesc7, #camdendesc8, #tweezdesc2, #tweezdesc3, #tweezdesc4, #tweezdesc5, #tweezdesc6, #tweezdesc7, #tweezdesc9, #tweezdesc10, #tweezdesc11, #kdfdesc2, #kdfdesc3, #kdfdesc4, #kdfdesc5, #kdfdesc6, #kdfdesc7, #kdfdesc8, #kdfdesc9, #simpledesc2, #simpledesc3, #simpledesc4, #simpledesc5, #simpledesc6, #simpledesc7, #simpledesc8, #gindesc2, #gindesc3, #gindesc4, #gindesc5, #gindesc6, #gindesc7, #gindesc8, #scentsdesc2, #scentsdesc3, #scentsdesc4, #scentsdesc5, #scentsdesc6, #scentsdesc7, #scentsdesc8, #scentsdesc9, #scentsdesc10, #scentsdesc11 {
+                animation-name: fade-in-out;
+                animation-duration: 13s;
+                animation-timing-function: linear;
+                animation-delay: 0s;
+                animation-iteration-count: 1;
+                animation-direction: normal;
+                animation-fill-mode: none;
+                animation-play-state: running;
+            }
+
+            #camdendesc4, #tweezdesc8 {
+                animation-name: fade-in-out;
+                animation-duration: 18s;
+                animation-timing-function: linear;
+                animation-delay: 0s;
+                animation-iteration-count: 1;
+                animation-direction: normal;
+                animation-fill-mode: none;
+                animation-play-state: running;
+            }
+
+            @keyframes fade-in-out {
+                0% {
+                    opacity: 0;
+                }
+                10% {
+                    opacity: 1;
+                }
+                90% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity:0;
+                }
+            }
+            
+
+            @keyframes fade-out {
+                    
+                0% {
+                    opacity:1;
+                }
+                100% {
+                    opacity:0;
+                }
+	        }
 
         </style>
         <script>
+
             
+
+            function DescOff() {
+                document.getElementById('startwindow').style.display = "none";
+                document.getElementById('startdesc').style.display = "none";
+                document.getElementById('camdendesc1').style.display = "none";
+                document.getElementById('camdendesc2').style.display = 'none';
+                document.getElementById('camdendesc3').style.display = 'none';
+                document.getElementById('camdendesc4').style.display = 'none';
+                document.getElementById('camdendesc5').style.display = 'none';
+                document.getElementById('camdendesc6').style.display = 'none';
+                document.getElementById('camdendesc7').style.display = 'none';
+                document.getElementById('camdendesc8').style.display = 'none';
+                document.getElementById('tweezdesc1').style.display = "none";
+                document.getElementById('tweezdesc2').style.display = 'none';
+                document.getElementById('tweezdesc3').style.display = 'none';
+                document.getElementById('tweezdesc4').style.display = 'none';
+                document.getElementById('tweezdesc5').style.display = 'none';
+                document.getElementById('tweezdesc6').style.display = 'none';
+                document.getElementById('tweezdesc7').style.display = 'none';
+                document.getElementById('tweezdesc8').style.display = 'none';
+                document.getElementById('tweezdesc9').style.display = 'none';
+                document.getElementById('tweezdesc10').style.display = 'none';
+                document.getElementById('tweezdesc11').style.display = 'none';
+                document.getElementById('kdfdesc1').style.display = "none";
+                document.getElementById('kdfdesc2').style.display = 'none';
+                document.getElementById('kdfdesc3').style.display = 'none';
+                document.getElementById('kdfdesc4').style.display = 'none';
+                document.getElementById('kdfdesc5').style.display = 'none';
+                document.getElementById('kdfdesc6').style.display = 'none';
+                document.getElementById('kdfdesc7').style.display = 'none';
+                document.getElementById('kdfdesc8').style.display = 'none';
+                document.getElementById('kdfdesc9').style.display = 'none';
+                document.getElementById('simpledesc1').style.display = "none";
+                document.getElementById('simpledesc2').style.display = 'none';
+                document.getElementById('simpledesc3').style.display = 'none';
+                document.getElementById('simpledesc4').style.display = 'none';
+                document.getElementById('simpledesc5').style.display = 'none';
+                document.getElementById('simpledesc6').style.display = 'none';
+                document.getElementById('simpledesc7').style.display = 'none';
+                document.getElementById('simpledesc8').style.display = 'none';
+                document.getElementById('gindesc1').style.display = "none";
+                document.getElementById('gindesc2').style.display = 'none';
+                document.getElementById('gindesc3').style.display = 'none';
+                document.getElementById('gindesc4').style.display = 'none';
+                document.getElementById('gindesc5').style.display = 'none';
+                document.getElementById('gindesc6').style.display = 'none';
+                document.getElementById('gindesc7').style.display = 'none';
+                document.getElementById('gindesc8').style.display = 'none';
+                document.getElementById('scentsdesc1').style.display = "none";
+                document.getElementById('scentsdesc2').style.display = 'none';
+                document.getElementById('scentsdesc3').style.display = 'none';
+                document.getElementById('scentsdesc4').style.display = 'none';
+                document.getElementById('scentsdesc5').style.display = 'none';
+                document.getElementById('scentsdesc6').style.display = 'none';
+                document.getElementById('scentsdesc7').style.display = 'none';
+                document.getElementById('scentsdesc8').style.display = 'none';
+                document.getElementById('scentsdesc9').style.display = 'none';
+                document.getElementById('scentsdesc10').style.display = 'none';
+                document.getElementById('scentsdesc11').style.display = 'none';
+
+            }
+
+            function VidOff() {
+                document.getElementById('startwindow').style.display = "none";
+                document.getElementById('camdenplayer').style.display = "none";
+                document.getElementById('tweezplayer').style.display = "none";
+                document.getElementById('kdfplayer').style.display = "none";
+                document.getElementById('simpleplayer').style.display = "none";
+                document.getElementById('ginplayer').style.display = "none";
+                document.getElementById('scentsplayer').style.display = "none";
+            }
+
+            function CamdenOn() {
+                document.getElementById('camdendesc1').style.display = 'block';
+                document.getElementById('camdenplayer').style.display = 'block';
+            }
+
+            function TweezOn() {
+                document.getElementById('tweezdesc1').style.display = 'block';
+                document.getElementById('tweezplayer').style.display = 'block';
+            }
+
+            function KDFOn() {
+                document.getElementById('kdfdesc1').style.display = 'block';
+                document.getElementById('kdfplayer').style.display = 'block';
+            }
+
+            function SimpleOn() {
+                document.getElementById('simpledesc1').style.display = 'block';
+                document.getElementById('simpleplayer').style.display = 'block';
+            }
+
+            function GinOn() {
+                document.getElementById('gindesc1').style.display = 'block';
+                document.getElementById('ginplayer').style.display = 'block';
+            }
+
+            function ScentsOn() {
+                document.getElementById('scentsdesc1').style.display = 'block';
+                document.getElementById('scentsplayer').style.display = 'block';
+            }
+
+            var stopAllYouTubeVideos = () => { 
+                var iframes = document.querySelectorAll('iframe');
+                Array.prototype.forEach.call(iframes, iframe => { 
+                    iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', 
+                        func: 'stopVideo' }), '*');
+                });
+            }
+                stopAllYouTubeVideos()
+
+
+            var tag = document.createElement("script");
+            tag.src = "https://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName("script")[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+            var videotime = 0;
+            var timeupdater = null;
+
+            function CamVidReady() {
+                cplayer = new YT.Player('camdenplayer', {
+                    width: '720',
+                    height: '405',
+                    videoId: "1xZMHQjRTSM",
+                    events: {
+                    'onReady': onCamPlayerReady
+                    }
+                });
+            }
+
+            function onCamPlayerReady() {
+                function updateTime() {
+                    var oldTime = videotime;
+                    if(cplayer && cplayer.getCurrentTime) {
+                        videotime = cplayer.getCurrentTime();
+                    }
+                    if(videotime !== oldTime) {
+                        onCamProgress(videotime);
+                    }
+                }
+                timeupdater = setInterval(updateTime, 100);
+            }
+
+            function onCamProgress(currentTime) {
+                if(currentTime > 0) {
+                    document.getElementById('camdendesc1').style.animationPlayState = 'running';
+                }
+                if(currentTime > 10) {
+                    document.getElementById('camdendesc1').style.display = 'none';
+                }
+                if(currentTime > 180 && currentTime < 181) {
+                    document.getElementById('camdendesc2').style.display = 'block';
+                }
+                if(currentTime > 193 || currentTime < 177) {
+                    document.getElementById('camdendesc2').style.display = 'none';
+                }
+                if(currentTime > 260 && currentTime < 261) {
+                    document.getElementById('camdendesc3').style.display = 'block';
+                }
+                if(currentTime > 273 || currentTime < 257) {
+                    document.getElementById('camdendesc3').style.display = 'none';
+                }
+                if(currentTime > 318 && currentTime < 319) {
+                    document.getElementById('camdendesc4').style.display = 'block';
+                }
+                if(currentTime > 336 || currentTime < 315) {
+                    document.getElementById('camdendesc4').style.display = 'none';
+                }
+                if(currentTime > 390 && currentTime < 391) {
+                    document.getElementById('camdendesc5').style.display = 'block';
+                }
+                if(currentTime > 403 || currentTime < 387) {
+                    document.getElementById('camdendesc5').style.display = 'none';
+                }
+                if(currentTime > 528 && currentTime < 529) {
+                    document.getElementById('camdendesc6').style.display = 'block';
+                }
+                if(currentTime > 541 || currentTime < 525) {
+                    document.getElementById('camdendesc6').style.display = 'none';
+                }
+                if(currentTime > 612 && currentTime < 613) {
+                    document.getElementById('camdendesc7').style.display = 'block';
+                }
+                if(currentTime > 625 || currentTime < 609) {
+                    document.getElementById('camdendesc7').style.display = 'none';
+                }
+                if(currentTime > 764 && currentTime < 765) {
+                    document.getElementById('camdendesc8').style.display = 'block';
+                }
+                if(currentTime > 777 || currentTime < 761) {
+                    document.getElementById('camdendesc8').style.display = 'none';
+                }   
+            }
+
+            function TweezVidReady() {
+                tplayer = new YT.Player('tweezplayer', {
+                    width: '720',
+                    height: '405',
+                    videoId: "25GWjze0WlU",
+                    events: {
+                    'onReady': onTweezPlayerReady
+                    }
+                });
+            }
+
+            function onTweezPlayerReady() {
+                function updateTime() {
+                    var oldTime = videotime;
+                    if(tplayer && tplayer.getCurrentTime) {
+                        videotime = tplayer.getCurrentTime();
+                    }
+                    if(videotime !== oldTime) {
+                        onTweezProgress(videotime);
+                    }
+                }
+                timeupdater = setInterval(updateTime, 100);
+            }
+
+            function onTweezProgress(currentTime) {
+                if(currentTime > 0) {
+                    document.getElementById('tweezdesc1').style.animationPlayState = 'running';
+                }
+                if(currentTime > 10) {
+                    document.getElementById('tweezdesc1').style.display = 'none';
+                }
+                if(currentTime > 302 && currentTime < 303) {
+                    document.getElementById('tweezdesc2').style.display = 'block';
+                }
+                if(currentTime > 315 || currentTime < 299) {
+                    document.getElementById('tweezdesc2').style.display = 'none';
+                }
+                if(currentTime > 388 && currentTime < 389) {
+                    document.getElementById('tweezdesc3').style.display = 'block';
+                }
+                if(currentTime > 401 || currentTime < 385) {
+                    document.getElementById('tweezdesc3').style.display = 'none';
+                }
+                if(currentTime > 432 && currentTime < 433) {
+                    document.getElementById('tweezdesc4').style.display = 'block';
+                }
+                if(currentTime > 445 || currentTime < 429) {
+                    document.getElementById('tweezdesc4').style.display = 'none';
+                }
+                if(currentTime > 643 && currentTime < 644) {
+                    document.getElementById('tweezdesc5').style.display = 'block';
+                }
+                if(currentTime > 656  || currentTime < 640) {
+                    document.getElementById('tweezdesc5').style.display = 'none';
+                }
+                if(currentTime > 752 && currentTime < 753) {
+                    document.getElementById('tweezdesc6').style.display = 'block';
+                }
+                if(currentTime > 765 || currentTime < 749) {
+                    document.getElementById('tweezdesc6').style.display = 'none';
+                }
+                if(currentTime > 838 && currentTime < 839) {
+                    document.getElementById('tweezdesc7').style.display = 'block';
+                }
+                if(currentTime > 851  || currentTime < 838) {
+                    document.getElementById('tweezdesc7').style.display = 'none';
+                }
+                if(currentTime > 901 && currentTime < 902) {
+                    document.getElementById('tweezdesc8').style.display = 'block';
+                }
+                if(currentTime > 919 || currentTime < 898) {
+                    document.getElementById('tweezdesc8').style.display = 'none';
+                }
+                if(currentTime > 1006 && currentTime < 1007) {
+                    document.getElementById('tweezdesc9').style.display = 'block';
+                }
+                if(currentTime > 1019 || currentTime < 1003) {
+                    document.getElementById('tweezdesc9').style.display = 'none';
+                }
+                if(currentTime > 1143 && currentTime < 1144) {
+                    document.getElementById('tweezdesc10').style.display = 'block';
+                }
+                if(currentTime > 1156 || currentTime < 1140) {
+                    document.getElementById('tweezdesc10').style.display = 'none';
+                }
+                if(currentTime > 1438 && currentTime < 1439) {
+                    document.getElementById('tweezdesc11').style.display = 'block';
+                }
+                if(currentTime > 1451 || currentTime < 1435) {
+                    document.getElementById('tweezdesc11').style.display = 'none';
+                }      
+            }
+
+            function KDFVidReady() {
+                kplayer = new YT.Player('kdfplayer', {
+                    width: '720',
+                    height: '405',
+                    videoId: "L-Fpdg8YspU",
+                    events: {
+                    'onReady': onKDFPlayerReady
+                    }
+                });
+            }
+
+            function onKDFPlayerReady() {
+                function updateTime() {
+                    var oldTime = videotime;
+                    if(kplayer && kplayer.getCurrentTime) {
+                        videotime = kplayer.getCurrentTime();
+                    }
+                    if(videotime !== oldTime) {
+                        onKDFProgress(videotime);
+                    }
+                }
+                timeupdater = setInterval(updateTime, 100);
+            }
+
+            function onKDFProgress(currentTime) {
+                if(currentTime > 0) {
+                    document.getElementById('kdfdesc1').style.animationPlayState = 'running';
+                }
+                if(currentTime > 10) {
+                    document.getElementById('kdfdesc1').style.display = 'none';
+                }
+                if(currentTime > 231 && currentTime < 232) {
+                    document.getElementById('kdfdesc2').style.display = 'block';
+                }
+                if(currentTime > 244 || currentTime < 229) {
+                    document.getElementById('kdfdesc2').style.display = 'none';
+                }
+                if(currentTime > 328 && currentTime < 329) {
+                    document.getElementById('kdfdesc3').style.display = 'block';
+                }
+                if(currentTime > 341 || currentTime < 325) {
+                    document.getElementById('kdfdesc3').style.display = 'none';
+                }
+                if(currentTime > 425 && currentTime < 426) {
+                    document.getElementById('kdfdesc4').style.display = 'block';
+                }
+                if(currentTime > 438 || currentTime < 422) {
+                    document.getElementById('kdfdesc4').style.display = 'none';
+                }
+                if(currentTime > 527 && currentTime < 528) {
+                    document.getElementById('kdfdesc5').style.display = 'block';
+                }
+                if(currentTime > 540 || currentTime < 524) {
+                    document.getElementById('kdfdesc5').style.display = 'none';
+                }
+                if(currentTime > 580 && currentTime < 581) {
+                    document.getElementById('kdfdesc6').style.display = 'block';
+                }
+                if(currentTime > 593 || currentTime < 577) {
+                    document.getElementById('kdfdesc6').style.display = 'none';
+                }
+                if(currentTime > 622 && currentTime < 623) {
+                    document.getElementById('kdfdesc7').style.display = 'block';
+                }
+                if(currentTime > 635 || currentTime < 619) {
+                    document.getElementById('kdfdesc7').style.display = 'none';
+                }
+                if(currentTime > 742 && currentTime < 743) {
+                    document.getElementById('kdfdesc8').style.display = 'block';
+                }
+                if(currentTime > 755 || currentTime < 739) {
+                    document.getElementById('kdfdesc8').style.display = 'none';
+                }
+                if(currentTime > 912 && currentTime < 913) {
+                    document.getElementById('kdfdesc9').style.display = 'block';
+                }
+                if(currentTime > 925 || currentTime < 909) {
+                    document.getElementById('kdfdesc9').style.display = 'none';
+                }
+            }
+
+            function SimpleVidReady() {
+                splayer = new YT.Player('simpleplayer', {
+                    width: '720',
+                    height: '405',
+                    videoId: "zdNm1-w5lF8",
+                    events: {
+                    'onReady': onSimplePlayerReady
+                    }
+                });
+            }
+
+            function onSimplePlayerReady() {
+                function updateTime() {
+                    var oldTime = videotime;
+                    if(splayer && splayer.getCurrentTime) {
+                        videotime = splayer.getCurrentTime();
+                    }
+                    if(videotime !== oldTime) {
+                        onSimpleProgress(videotime);
+                    }
+                }
+                timeupdater = setInterval(updateTime, 100);
+            }
+
+            function onSimpleProgress(currentTime) {
+                if(currentTime > 0) {
+                    document.getElementById('simpledesc1').style.animationPlayState = 'running';
+                }
+                if(currentTime > 10) {
+                    document.getElementById('simpledesc1').style.display = 'none';
+                }
+                if(currentTime > 240 && currentTime < 241) {
+                    document.getElementById('simpledesc2').style.display = 'block';
+                }
+                if(currentTime > 253 || currentTime < 237) {
+                    document.getElementById('simpledesc2').style.display = 'none';
+                }
+                if(currentTime > 341 && currentTime < 342) {
+                    document.getElementById('simpledesc3').style.display = 'block';
+                }
+                if(currentTime > 354 || currentTime < 338) {
+                    document.getElementById('simpledesc3').style.display = 'none';
+                }
+                if(currentTime > 425 && currentTime < 426) {
+                    document.getElementById('simpledesc4').style.display = 'block';
+                }
+                if(currentTime > 438 || currentTime < 422) {
+                    document.getElementById('simpledesc4').style.display = 'none';
+                }
+                if(currentTime > 494 && currentTime < 495) {
+                    document.getElementById('simpledesc5').style.display = 'block';
+                }
+                if(currentTime > 507 || currentTime < 491) {
+                    document.getElementById('simpledesc5').style.display = 'none';
+                }
+                if(currentTime > 640 && currentTime < 641) {
+                    document.getElementById('simpledesc6').style.display = 'block';
+                }
+                if(currentTime > 653 || currentTime < 637) {
+                    document.getElementById('simpledesc6').style.display = 'none';
+                }
+                if(currentTime > 699 && currentTime < 700) {
+                    document.getElementById('simpledesc7').style.display = 'block';
+                }
+                if(currentTime > 712 || currentTime < 696) {
+                    document.getElementById('simpledesc7').style.display = 'none';
+                }
+                if(currentTime > 938 && currentTime < 939) {
+                    document.getElementById('simpledesc8').style.display = 'block';
+                }
+                if(currentTime > 951 || currentTime < 935) {
+                    document.getElementById('simpledesc8').style.display = 'none';
+                }   
+            }
+
+            function GinVidReady() {
+                gplayer = new YT.Player('ginplayer', {
+                    width: '720',
+                    height: '405',
+                    videoId: "5MGWHZC0xHU",
+                    events: {
+                    'onReady': onGinPlayerReady
+                    }
+                });
+            }
+
+            function onGinPlayerReady() {
+                function updateTime() {
+                    var oldTime = videotime;
+                    if(gplayer && gplayer.getCurrentTime) {
+                        videotime = gplayer.getCurrentTime();
+                    }
+                    if(videotime !== oldTime) {
+                        onGinProgress(videotime);
+                    }
+                }
+                timeupdater = setInterval(updateTime, 100);
+            }
+
+            function onGinProgress(currentTime) {
+                if(currentTime > 0) {
+                    document.getElementById('gindesc1').style.animationPlayState = 'running';
+                }
+                if(currentTime > 10) {
+                    document.getElementById('gindesc1').style.display = 'none';
+                }
+                if(currentTime > 320 && currentTime < 321) {
+                    document.getElementById('gindesc2').style.display = 'block';
+                }
+                if(currentTime > 333 || currentTime < 317) {
+                    document.getElementById('gindesc2').style.display = 'none';
+                }
+                if(currentTime > 418 && currentTime < 419) {
+                    document.getElementById('gindesc3').style.display = 'block';
+                }
+                if(currentTime > 431 || currentTime < 415) {
+                    document.getElementById('gindesc3').style.display = 'none';
+                }
+                if(currentTime > 650 && currentTime < 651) {
+                    document.getElementById('gindesc4').style.display = 'block';
+                }
+                if(currentTime > 663 || currentTime < 647) {
+                    document.getElementById('gindesc4').style.display = 'none';
+                }
+                if(currentTime > 714 && currentTime < 715) {
+                    document.getElementById('gindesc5').style.display = 'block';
+                }
+                if(currentTime > 727 || currentTime < 711) {
+                    document.getElementById('gindesc5').style.display = 'none';
+                }
+                if(currentTime > 774 && currentTime < 775) {
+                    document.getElementById('gindesc6').style.display = 'block';
+                }
+                if(currentTime > 787 || currentTime < 771) {
+                    document.getElementById('gindesc6').style.display = 'none';
+                }
+                if(currentTime > 838 && currentTime < 839) {
+                    document.getElementById('gindesc7').style.display = 'block';
+                }
+                if(currentTime > 851 || currentTime < 835) {
+                    document.getElementById('gindesc7').style.display = 'none';
+                }
+                if(currentTime > 1015 && currentTime < 1016) {
+                    document.getElementById('gindesc8').style.display = 'block';
+                }
+                if(currentTime > 1028 || currentTime < 1012) {
+                    document.getElementById('gindesc8').style.display = 'none';
+                }   
+            }
+
+            function ScentsVidReady() {
+                scplayer = new YT.Player('scentsplayer', {
+                    width: '720',
+                    height: '405',
+                    videoId: "ktr1xAP2f1c",
+                    events: {
+                    'onReady': onScentsPlayerReady
+                    }
+                });
+            }
+
+            function onScentsPlayerReady() {
+                function updateTime() {
+                    var oldTime = videotime;
+                    if(scplayer && scplayer.getCurrentTime) {
+                        videotime = scplayer.getCurrentTime();
+                    }
+                    if(videotime !== oldTime) {
+                        onScentsProgress(videotime);
+                    }
+                }
+                timeupdater = setInterval(updateTime, 100);
+            }
+
+            function onScentsProgress(currentTime) {
+                if(currentTime > 0) {
+                    document.getElementById('scentsdesc1').style.animationPlayState = 'running';
+                }
+                if(currentTime > 10) {
+                    document.getElementById('scentsdesc1').style.display = 'none';
+                }
+                if(currentTime > 299 && currentTime < 300) {
+                    document.getElementById('scentsdesc2').style.display = 'block';
+                }
+                if(currentTime > 312 || currentTime < 296) {
+                    document.getElementById('scentsdesc2').style.display = 'none';
+                }
+                if(currentTime > 365 && currentTime < 366) {
+                    document.getElementById('scentsdesc3').style.display = 'block';
+                }
+                if(currentTime > 378 || currentTime < 362) {
+                    document.getElementById('scentsdesc3').style.display = 'none';
+                }
+                if(currentTime > 480 && currentTime < 481) {
+                    document.getElementById('scentsdesc4').style.display = 'block';
+                }
+                if(currentTime > 493 || currentTime < 477) {
+                    document.getElementById('scentsdesc4').style.display = 'none';
+                }
+                if(currentTime > 570 && currentTime < 571) {
+                    document.getElementById('scentsdesc5').style.display = 'block';
+                }
+                if(currentTime > 583 || currentTime < 567) {
+                    document.getElementById('scentsdesc5').style.display = 'none';
+                }
+                if(currentTime > 649 && currentTime < 650) {
+                    document.getElementById('scentsdesc6').style.display = 'block';
+                }
+                if(currentTime > 662 || currentTime < 646) {
+                    document.getElementById('scentsdesc6').style.display = 'none';
+                }
+                if(currentTime > 758 && currentTime < 759) {
+                    document.getElementById('scentsdesc7').style.display = 'block';
+                }
+                if(currentTime > 771 || currentTime < 755) {
+                    document.getElementById('scentsdesc7').style.display = 'none';
+                }
+                if(currentTime > 835 && currentTime < 836) {
+                    document.getElementById('scentsdesc8').style.display = 'block';
+                }
+                if(currentTime > 848 || currentTime < 832) {
+                    document.getElementById('scentsdesc8').style.display = 'none';
+                }
+                if(currentTime > 906 && currentTime < 907) {
+                    document.getElementById('scentsdesc9').style.display = 'block';
+                }
+                if(currentTime > 919 || currentTime < 903) {
+                    document.getElementById('scentsdesc9').style.display = 'none';
+                }
+                if(currentTime > 1006 && currentTime < 1007) {
+                    document.getElementById('scentsdesc10').style.display = 'block';
+                }
+                if(currentTime > 1019 || currentTime < 1003) {
+                    document.getElementById('scentsdesc10').style.display = 'none';
+                }
+                if(currentTime > 1077 && currentTime < 1078) {
+                    document.getElementById('scentsdesc11').style.display = 'block';
+                }
+                if(currentTime > 1090 || currentTime < 1074) {
+                    document.getElementById('scentsdesc11').style.display = 'none';
+                }
+            }
+
         </script>
     </head>
     <body>
-        <header>
-            <a href="#main" class="skip">Skip to main content</a>
-            <nav>
-
-            </nav>
-        </header>
+        <a href="#main" class="skip">Skip to main content</a>
+        <nav>
+            <div class="navflex">
+                <div class="navbutts">
+                    <div>
+                        <a href="index.html" class="navbutton">Home</a>
+                    </div>
+                    <div>
+                        <a href="history.html" class="navbutton">Band History</a>
+                    </div>
+                    <div>
+                        <a href="guide.html" class="navbutton">Jam Guide</a>
+                    </div>
+                </div>
+                <div class="webtitle" >
+                    <img src="images/title.png" alt="Title card">
+                </div>
+                <div class="ocelot">
+                    <a class="ocelotpic" href="https://www.youtube.com/watch?v=0cb3lruYkgM" target="_blank"><img src="images/ocelot.png" alt="Ocelot face"></a>
+                </div>
+            </div>
+        </nav>
         <main id="main">
-        
+
+            <section class="jamtitle">
+                    <h1><img id="jamcard" src="images/jam_guide_title.png" alt="Jam guide title card"></h1>
+            </section>
+
+            <section class="jamlist">
+                <div id="howto">
+                    <h2>How To Use This Guide</h2>
+                    <p>For most people, getting into Phish is hard. For the untrained ear, it all sounds like a big noodly mess with goofy lyrics. Which, to be fair, is exactly what Phish is. But in that silly, tangling hodgepodge of notes lies a mountain of raw, unbridled creativity and musical kinship that can be found nowhere else. While Phish may not be your cup of tea (don't worry, that just makes you normal), I believe a little bit of guided listening can open their music up to almost anyone.</p><br>
+                    <p>This guide features a few of my personal favorite Phish jams, whith notable moments in the jam explained. To start, click on a song in the list to the right. The video will open below on the left-hand side, and on the right-hand a description of the video will appear, with the times of the notable moments listed. As the video plays and reaches those times, a short description will appear. Songs with an * are shows I was personally in attendance for.</p>
+                    <h2>HAPPY JAMMING!</h2>
+                </div>
+                <div class="songlist">
+                    <h2>Songlist</h2>
+                    <div class="slist">
+                        <button class="songbutt" onclick="DescOff(); VidOff(); stopAllYouTubeVideos(); CamdenOn(); CamVidReady();">Chalkdust Torture 7/10/1999</button>
+                        <button class="songbutt" onclick="DescOff(); VidOff(); stopAllYouTubeVideos(); TweezOn(); TweezVidReady();">Tweezer 2/28/2003</button>
+                        <button class="songbutt" onclick="DescOff(); VidOff(); stopAllYouTubeVideos(); KDFOn(); KDFVidReady();">Kill Devil Falls 7/23/2023*</button>
+                        <button class="songbutt" onclick="DescOff(); VidOff(); stopAllYouTubeVideos(); SimpleOn(); SimpleVidReady();">Simple 12/6/1996</button>
+                        <button class="songbutt" onclick="DescOff(); VidOff(); stopAllYouTubeVideos(); GinOn(); GinVidReady();">Bathtub Gin 7/28/1998</button>
+                        <button class="songbutt" onclick="DescOff(); VidOff(); stopAllYouTubeVideos(); ScentsOn(); ScentsVidReady();">Scents and Subtle Sounds 12/6/2019*</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="jamplayer">
+                <div id="jamwindow">
+                    <div id="startwindow">
+                        <img id="hotdog" src="images/Phishdog.png" alt="Phish riding a giant hot dog">
+                    </div>
+                    <div id="camdenplayer"></div>
+                    <div id="tweezplayer"></div>
+                    <div id="kdfplayer"></div>
+                    <div id="simpleplayer"></div>
+                    <div id="ginplayer"></div>
+                    <div id="scentsplayer"></div>
+                </div>
+                <div class="jamdesc">
+                    <h2>Description</h2>
+                    <div id="startdesc">
+                        <h2>Click on a show above to get started!</h2>
+                    </div>
+                    <div id="camdendesc1">
+                        <p>Date: July 10, 1999</p><br>
+                        <p>Venue: E Centre, Camden, NJ</p><br>
+                        <p>When asked which of their past performances perfect exemplifies Phish and what they are about, most of the band members say its this one. True to 1999 fashion, Mike takes the spotlight here, directing the jam to weave in and out of a usual Chalkdust jam, and finishes with a soaring bliss jam</p><br>
+                        <p>Notable moments: 3:00, 4:20, 5:18, 6:30, 8:48, 10:12</p>
+                    </div>
+                    <div id="camdendesc2">
+                        <p>The jam kicks off in normal fashion, peppered with some snappy Mike licks.</p>
+                    </div>
+                    <div id="camdendesc3">
+                        <p>Mike has been hinting at an idea, hanging every other note for a little while while also suggesting a new melodic direction.</p>
+                    </div>
+                    <div id="camdendesc4">
+                        <p>Trey and Mike link up where Mike was suggesting. Trey alternates between two high notes, Page starts lightly adding some high keys, Mike moves his playing down to a sparse but powerful pulse, and Fish opens up on splashier ride cymbols while adding in more ghost notes. Everyone is leaving a lot of empty space while also not stepping on each others toes. For the jam of a song that is normally a chaotic flurry of notes, this is a wonderful example of the beauty of negative space.</p>
+                    </div>
+                    <div id="camdendesc5">
+                        <p>Mike hits a dissonant note belonging to the key of the original jam. Trey and Page follow right not along after into the original Chalkdust jam.</p>
+                    </div>
+                    <div id="camdendesc6">
+                        <p>Trey and Mike link up again, this time launching in to a high-power, major key, bliss jam. Mike and Fish start a quick driving pulse while Page lays down smooth baby grand harmonies under Trey's screeching melody.</p>
+                    </div>
+                    <div id="camdendesc7">
+                        <p>BLAST OFF!!!</p>
+                    </div>
+                    <div id="camdendesc8">
+                        <p>As the jam levels out and winds down, Mike and Trey start an interesting, spacy, funky groove. Fish joins in, leaving Page to wash everything out on the clav.</p>
+                    </div>
+                    <div id="tweezdesc1">
+                        <p>Date: February 28,2003</p><br>
+                        <p>Venue: Nassau Coliseum, Uniondale, NY</p><br>
+                        <p>Coming out of their first hiatus as a band, this show eased the minds of many a Phish fan, who worried if the boys had maybe lost their step while being away. While this era of the band is most fans' least favorite, there's no question that 2003 Phish had an energy to it not found in any other era. This Tweezer is a perfect example of the raw power and intensity the boys brought.</p><br>
+                        <p>Notable moments: 5:02, 6:28, 7:12, 10:43, 12:32, 13:58, 15:01, 16:46, 19:03, 23:58</p>
+                    </div>
+                    <div id="tweezdesc2">
+                        <p>Trey launches us into the jam with a swirly looped and timeshifted lick, indicating the start of a very intense jam.</p>
+                    </div>
+                    <div id="tweezdesc3">
+                        <p>Fish opens up the beat a little while also giving it a little more oomph. Trey follows suit by laying hard into the blues lines. Then Fish starts improvising a new beat on a ride cymbol.</p>
+                    </div>
+                    <div id="tweezdesc4">
+                        <p>Everyone starts to cool it down a litte, getting ready to start exploring for a new direction...</p>
+                    </div>
+                    <div id="tweezdesc5">
+                        <p>Trey strikes a chord with heavy delay and wah effects, signalling to the rest of the band that its time to go in a new direction. Fish confirms by giving 3 even hits on his crash cymbol (Fish's usual signal to the rest of the band to wrap the current idea up).</p>
+                    </div>
+                    <div id="tweezdesc6">
+                        <p>The jam takes its first major turn. Trey holds a note while Page moves from a Dorian mode (bluesier, more minor sounding) to a major mode, changing the mood entirely. Mike and Trey follow suit not long over, playing complimentary melodies over each other on top of Page's chords.</p>
+                    </div>
+                    <div id="tweezdesc7">
+                        <p>After patiently waiting for each other to get in sync with the new direction, all four members increase their intensity, push hard towards a stratospheric peak.</p>
+                    </div>
+                    <div id="tweezdesc8">
+                        <img id="sunrise" src="images/glorious.png" alt="Sunrise">
+                    </div>
+                    <div id="tweezdesc9">
+                        <p>After an incredibly emotional peak, Fish eases up on the intensity and the rest of the members follow suit and lower their volume, giving each other and the audience a chance to breath.</p>
+                    </div>
+                    <div id="tweezdesc10">
+                        <p>Trey and Fish lock in rhythmically, relaunching the inensity, this time in a more blues rock fashion.</p>
+                    </div>
+                    <div id="tweezdesc11">
+                        <p>Ending a second intense peak leads to the band winding down into a dark, ambient swirl that washes out into the next song.</p>
+                    </div>
+                    <div id="kdfdesc1">
+                        <p>Date July 23, 2023</p>
+                        <p>Venue: St. Joseph's Health Amphitheater at Lakeview, Syracuse, NY</p>
+                        <p>A beautiful Sunday evening in the hometown of Jon "Moses DeWitt Brown" Fishman. After a couple blazing shows in Pittsburgh the previous two nights, the boys really showed everyone why we fans have the saying "Never miss a Sunday show". For a song that doesn't get taken out for a ride often, this jam is considered by many as one of if not the best Kill Devil Falls played so far.</p>
+                        <p>Notable moments: 3:51, 5:28, 7:05, 8:47, 9:40, 10:22, 12:22, 15:12</p>
+                    </div>
+                    <div id="kdfdesc2">
+                        <p>Right out of the gate, its clear this isn't going to be a usual Kill Devil Falls jam. Skipping right past the usual outro, Fish immdeiately turns up the heat while Page subtly shifts the harmonic feel on the Rhodes. Trey slowly shifts the Kill Devil Falls melody right along with Page.</p>
+                    </div>
+                    <div id="kdfdesc3">
+                        <p>Page hints at shifting to something more major, and Trey immediately hops on board, followed very closely by Mike. They straddle the line between major and minor for a few measures before completely shifting to major.</p>
+                    </div>
+                    <div id="kdfdesc4">
+                        <p>Trey ends this melodic run with this blues lick, and immediately Mike and Page lock in with him to start pushing the intensity.</p>
+                    </div>
+                    <div id="kdfdesc5">
+                        <p>Trey ends another melodic run in a blues lick, but this time keeps the minor blues feel going, and everyone else follows suit, signaling another shift in mood.</p>
+                    </div>
+                    <div id="kdfdesc6">
+                        <p>Trey solidifies the shift with a change in effect and tone while playing some choppy, syncopated rhythm chords. Mike takes that opportunity to go a little more meloidc, while Fish tightens up the beat, and Page goes hard on the clav to give a powerful funky feel.</p>
+                    </div>
+                    <div id="kdfdesc7">
+                        <img id="rock" src="images/rock.png" alt="Rock and roll hand sign">
+                    </div>
+                    <div id="kdfdesc8">
+                        <p>Fish hits his crash cymbol 3 times in succession (his signal to the other members that its time to move on to the next idea), after which Trey immediately moves back to a major key shift that both Page and Mike have been hinting at for a little while.</p>
+                    </div>
+                    <div id="kdfdesc9">
+                        <p>Trey starts a melody that becomes the basis for the rest of the jam.</p>
+                    </div>
+                    <div id="simpledesc1">
+                        <p>Date: December 6, 1996</p>
+                        <p>Venue:  The Aladdin Theatre, Las Vegas, NV</p>
+                        <p>How can you not have fun in Vegas? This show was just a party all over, with special guests including a troupe of Elvis impersonators, some Yodeling Cowgirls, and Les Claypool and Larry LaLonde from the band Primus. This version of Simple is part of one of the best Mike's Grooves of all time (Mike's Groove is the shortand for a group of songs sandwiched in between the songs Mike's Song and Weekapaug Groove). It also is one of my favorite examples of how Phish can bring the intensity down really, really low while still having a heavy emotional impact.</p>
+                        <p>Notable moments: 4:00, 5:41, 7:05, 8:14, 10:40, 11:39, 15:38</p>
+                    </div>
+                    <div id="simpledesc2">
+                        <p>The jam starts off pretty mellow, indicative of the slow decent down that is to come.</p>
+                    </div>
+                    <div id="simpledesc3">
+                        <p>Mike and Fish break up the beat, adding ghost notes and adding a lulled swing, contributing further to the decent of the jam</p>
+                    </div>
+                    <div id="simpledesc4">
+                        <p>Dropping in intensity even further. Fish starts using pieces of his kit that take up less musical space, Mike makes his slow swing more pronounced, Trey plays licks around the mid-level, and Page does some light tickling of the higher keys.</p>
+                    </div>
+                    <div id="simpledesc5">
+                        <p>Fish drops out almost entirely, using only very light cymbol and snare taps. Trey starts moving up to the higher registers with Page, interweaving his melodies in between Page's arpeggios.</p>
+                    </div>
+                    <div id="simpledesc6">
+                        <p>All four members lock into a pulse with each other, signalling that we're about to do a 180 degree flip in the intensity direction.</p>
+                    </div>
+                    <div id="simpledesc7">
+                        <p>Trey hits a super tasty blues lick, which the others grab onto as a starting point for really turning up the intensity.</p>
+                    </div>
+                    <div id="simpledesc8">
+                        <p>Trey uses his feedback to provide an ambient ending for the song, Mike and Fish start dropping intenstiy, and Page does some sweeping arpeggios, giving the end to the jam a washy, swirly feel. At some point Fish sings a portion of the chorus to "Blister In The Sun" by the Violent Femmes. The jam fades out into the next song (Harry Hood).</p>
+                    </div>
+                    <div id="gindesc1">
+                        <p>Date: July 29, 1998</p>
+                        <p>Venue: Portland Meadows, Portland, OR</p>
+                        <p>The famous Riverport Gin. Widely considered one of the greatest Phish jams of all time, fans are usually split between this Bathtub Gin and the Went Gin. If you are looking for a jam that is all rise, that gets to the highest reaches of bliss, I would reccommend the Went Gin. If you want a super blissful jam that devolves into one of the nastiest, dirtiest funk jams you've ever heard, this is the one for you.</p>
+                        <p>Notable moments: 5:20, 6:58, 10:50, 11:54, 12:54, 13:58, 16:55</p>
+                    </div>
+                    <div id="gindesc2">
+                        <p>The jam starts out like most Gins, taking the silly Gershwin inspired melody and bringing it into a happy jam. </p>
+                    </div>
+                    <div id="gindesc3">
+                        <p>Trey starts a reptitive phrase, repeating it for the next 3 minutes (with a few embelishments here and there). The others take it as an opportunity to develop and fill up space, while driving up the intenstiy.</p>
+                    </div>
+                    <div id="gindesc4">
+                        <p>Trey reaps the fruit of the buildup he has been nurturing with that repitive phrase, taking advantage of the now very full sound that the others have arrived and and blasting soaring lines, driving the jam towards its peak.</p>
+                    </div>
+                    <div id="gindesc5">
+                        <p>Fish deftly switches up the beat pattern on his cymbal. The others immediately join in, all playing repitive phrases that levels out the intensity from the peak. All of them bring their volumes down slowly, giving a spacey feel to the jam.</p>
+                    </div>
+                    <div id="gindesc6">
+                        <p>Trey hits the wah pedal and starts a funk groove. Each of the others will slowly join in; Mike slowly forgoes melody/harmony for a deep pocket rhythm. Page slowly moves from piano to clav....</p>
+                    </div>
+                    <div id="gindesc7">
+                        <p>...and finally Fish moves off the ride cymbal and over to the cowbell, tightening up the pocket and solidifing the shift to the realm of super greasy funk.</p>
+                    </div>
+                    <div id="gindesc8">
+                        <p>Fish moves back to the ride cymbol, opening the beat back up and giving Trey and Page room to expand and explore the space further. The band keeps this up till the end, when they bring back the Gin melody to cap it all off.</p>
+                    </div>
+                    <div id="scentsdesc1">
+                        <p>Date: December 6, 2019</p>
+                        <p>Venue: North Charleston Coliseum, North Charleston, SC</p>
+                        <p>I consider this Scents and Subtle Sounds to be the best jam I ever got to see in person. Complete with the rarely seen Scents Intro, this version takes its jam all over the place, switching back and forth between moods before finally settling on a monster ending.</p>
+                        <p>Notable moments: 4:59, 6:05, 8:00, 9:30, 10:49, 12:38, 13:55, 15:06, 16:46, 17:57</p>
+                    </div>
+                    <div id="scentsdesc2">
+                        <p>The jam starts out in the same soft, tender emotionality as the chorus they just left, laying down a light cloud for the audience to lay on.</p>
+                    </div>
+                    <div id="scentsdesc3">
+                        <p>Like a firey sword, Trey belts out this line signalling the others to modulate to a new minor focused mode, which they take up immdeiately. Shortly after this Trey teases a line from Axilla (a song the played a earlier in the set).</p>
+                    </div>
+                    <div id="scentsdesc4">
+                        <p>Mike strikes up a major mode line, which the others joing in on right away again (this will be a common theme throughout this jam. Their synchronicity in this jam is off the charts). Page starts a melody line that Trey picks up, creating a sort of call and response between him and Page, occasionally landing on the same melody simultaniously.</p>
+                    </div>
+                    <div id="scentsdesc5">
+                        <p>Fish does his signature hits on his crash cymbol, signalling to the others to change it up. Trey immediately starts up another minor mode phrase, which Mike and Page join in on immediately.</p>
+                    </div>
+                    <div id="scentsdesc6">
+                        <p>Page plays some ascending chords and the band goes back to playing a major mode, however there's some tension here. They masterfully hold on to this tension while it builds up and then bursts out.</p>
+                    </div>
+                    <div id="scentsdesc7">
+                        <p>Very quickly after the peak, the band explores some more free-flowing, almost ambient playing, figuring out if they are going to keep going or if they should wind it all down.</p>
+                    </div>
+                    <div id="scentsdesc8">
+                        <p>Fish switches to a ride cymbol but keeps the driving beat going. He's not done yet. The rest of the band keeps the ambient sounds going, with Trey adding in another Axilla tease.</p>
+                    </div>
+                    <div id="scentsdesc9">
+                        <p>The ambient build up comes to a head. Simultaniously, Trey fires off on a phrase, Mike moves down to the low end and links up with Fish on a deep pocket groove, and Page moves over to the clav to really fill out the sound.</p>
+                    </div>
+                    <div id="scentsdesc10">
+                        <p>Who doesn't love a start/stop jam?</p>
+                    </div>
+                    <div id="scentsdesc11">
+                        <p>The jam goes ambient again, this time to wind things down and flow right into the next song (a cover of Led Zeppelin's "No Quarter")</p>
+                    </div>
+                </div>
+            </section>
+
         </main>
         <footer>
-
+            <p>&copy;2024  This site voluntarily complies with the Phish fan web site policy at: <a href="https://phish.com/faq/#web-guidelines" target="_blank">https://phish.com/faq/#web-guidelines</a></p>
+            <div class="footbutts">
+                <a href="index.html" class="navbutton">Home</a>
+                <a href="history.html" class="navbutton">Band History</a>
+                <a href="guide.html" class="navbutton">Jam Guide</a>
+            </div>
         </footer>
     </body>
 </html>
